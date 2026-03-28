@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 
 const GITHUB_URL = "https://github.com/AvivOron";
-const LINKEDIN_URL = "https://linkedin.com/in/avivoron";
+const LINKEDIN_URL = "https://www.linkedin.com/in/aviv-oron-9569616b/";
 
 export default function Hero() {
   const [visible, setVisible] = useState(false);
@@ -45,7 +45,7 @@ export default function Hero() {
         {/* Status badge */}
         <div className="flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-1.5 text-xs text-white/50 font-mono backdrop-blur-sm">
           <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse" />
-          available for work
+          <a href="https://www.linkedin.com/company/alice-io" target="_blank" rel="noopener noreferrer" className="hover:text-white/80 transition-colors">Sr. Software Developer @ Alice</a>
         </div>
 
         {/* Name */}
