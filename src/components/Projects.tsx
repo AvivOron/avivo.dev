@@ -8,7 +8,8 @@ const projects = [
     description:
       "Monthly financial net worth tracking desktop app. Visualize and manage your finances with clarity.",
     tags: ["TypeScript", "Desktop", "Finance"],
-    href: "https://github.com/AvivOron/finance-hub",
+    appHref: "/finance-hub",
+    codeHref: "https://github.com/AvivOron/finance-hub",
     status: "active",
   },
 ];
@@ -48,12 +49,13 @@ type Project = {
   name: string;
   description: string;
   tags: string[];
-  href: string;
+  appHref: string;
+  codeHref: string;
   status: string;
 };
 
 function ProjectCard({ project }: { project: Project }) {
-  const ref = useRef<HTMLAnchorElement>(null);
+  const ref = useRef<HTMLDivElement>(null);
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
@@ -73,11 +75,8 @@ function ProjectCard({ project }: { project: Project }) {
   }, []);
 
   return (
-    <a
+    <div
       ref={ref}
-      href={project.href}
-      target="_blank"
-      rel="noopener noreferrer"
       className="group relative flex flex-col gap-4 rounded-2xl border border-white/8 bg-white/3 p-6 backdrop-blur-sm transition-all duration-300 hover:border-white/15 hover:bg-white/6"
       style={{
         opacity: visible ? 1 : 0,
@@ -95,7 +94,7 @@ function ProjectCard({ project }: { project: Project }) {
         }}
       />
 
-      <div className="flex items-start justify-between">
+      <div className="flex items-start justify-between gap-4">
         <div className="flex flex-col gap-1">
           <h3 className="font-semibold text-white text-base leading-tight">
             {project.name}
@@ -107,7 +106,22 @@ function ProjectCard({ project }: { project: Project }) {
             </span>
           )}
         </div>
-        <ArrowIcon />
+        <div className="flex gap-2 flex-shrink-0">
+          <a
+            href={project.appHref}
+            className="flex items-center gap-1.5 rounded-lg border border-indigo-500/30 bg-indigo-500/10 px-3 py-1.5 text-xs text-indigo-300 font-sans font-medium transition-all duration-200 hover:border-indigo-500/60 hover:bg-indigo-500/20 hover:text-indigo-200"
+          >
+            Live app ↗
+          </a>
+          <a
+            href={project.codeHref}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-1.5 rounded-lg border border-white/10 bg-white/5 px-3 py-1.5 text-xs text-white/50 font-sans font-medium transition-all duration-200 hover:border-white/20 hover:bg-white/10 hover:text-white/70"
+          >
+            Source ↗
+          </a>
+        </div>
       </div>
 
       <p className="text-sm text-white/45 leading-relaxed">
@@ -124,7 +138,7 @@ function ProjectCard({ project }: { project: Project }) {
           </span>
         ))}
       </div>
-    </a>
+    </div>
   );
 }
 
