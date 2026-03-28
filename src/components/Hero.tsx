@@ -52,6 +52,11 @@ export default function Hero() {
           Software engineer. Building things that matter.
         </p>
 
+        {/* Personal */}
+        <p className="text-sm text-white/30 leading-relaxed max-w-sm">
+          Dad to Noga 👧 &amp; Tom 👦.<br />Husband to Inbar 👩‍🦱.
+        </p>
+
         {/* Social links */}
         <div
           className="flex gap-3 mt-2"
