@@ -2,6 +2,10 @@
   "framework": "nextjs",
   "rewrites": [
     {
+      "source": "/api/auth/:path*",
+      "destination": "https://finance-hub-umber.vercel.app/finance-hub/api/auth/:path*"
+    },
+    {
       "source": "/finance-hub",
       "destination": "https://finance-hub-umber.vercel.app/finance-hub"
     },
