@@ -42,12 +42,6 @@ export default function Hero() {
           transition: "opacity 0.7s ease, transform 0.7s ease",
         }}
       >
-        {/* Status badge */}
-        <div className="flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-1.5 text-xs text-white/50 font-mono backdrop-blur-sm">
-          <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse" />
-          <a href="https://www.linkedin.com/company/alice-io" target="_blank" rel="noopener noreferrer" className="hover:text-white/80 transition-colors">Sr. Software Developer @ Alice</a>
-        </div>
-
         {/* Name */}
         <h1 className="text-6xl font-bold tracking-tight text-white sm:text-7xl">
           Aviv Oron
@@ -76,18 +70,19 @@ export default function Hero() {
         </div>
 
         {/* Scroll hint */}
-        <div
-          className="mt-16 flex flex-col items-center gap-2"
+        <a
+          href="#experience"
+          className="mt-16 flex flex-col items-center gap-2 hover:opacity-70 transition-opacity"
           style={{
             opacity: visible ? 0.4 : 0,
             transition: "opacity 0.7s ease 0.6s",
           }}
         >
           <span className="text-xs font-mono text-white/40 tracking-widest uppercase">
-            projects
+            experience &amp; education
           </span>
           <ChevronDown />
-        </div>
+        </a>
       </div>
     </section>
   );
