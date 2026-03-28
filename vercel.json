@@ -3,7 +3,7 @@
   "rewrites": [
     {
       "source": "/finance-hub/:path*",
-      "destination": "https://finance-hub-liard-five.vercel.app/finance-hub/:path*"
+      "destination": "https://finance-hub-umber.vercel.app/finance-hub/:path*"
     }
   ]
 }
