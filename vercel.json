@@ -1,3 +1,9 @@
 {
-  "framework": "nextjs"
+  "framework": "nextjs",
+  "rewrites": [
+    {
+      "source": "/finance-hub/:path*",
+      "destination": "https://finance-hub-liard-five.vercel.app/finance-hub/:path*"
+    }
+  ]
 }
