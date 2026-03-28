@@ -6,6 +6,14 @@
       "destination": "https://finance-hub-umber.vercel.app/finance-hub/api/auth/:path*"
     },
     {
+      "source": "/api/data/:path*",
+      "destination": "https://finance-hub-umber.vercel.app/finance-hub/api/data/:path*"
+    },
+    {
+      "source": "/api/data",
+      "destination": "https://finance-hub-umber.vercel.app/finance-hub/api/data"
+    },
+    {
       "source": "/finance-hub",
       "destination": "https://finance-hub-umber.vercel.app/finance-hub"
     },
