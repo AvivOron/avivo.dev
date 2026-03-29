@@ -2,16 +2,8 @@
   "framework": "nextjs",
   "rewrites": [
     {
-      "source": "/api/auth/:path*",
-      "destination": "https://finance-hub-umber.vercel.app/finance-hub/api/auth/:path*"
-    },
-    {
-      "source": "/api/data/:path*",
-      "destination": "https://finance-hub-umber.vercel.app/finance-hub/api/data/:path*"
-    },
-    {
-      "source": "/api/data",
-      "destination": "https://finance-hub-umber.vercel.app/finance-hub/api/data"
+      "source": "/api/:path*",
+      "destination": "https://finance-hub-umber.vercel.app/finance-hub/api/:path*"
     },
     {
       "source": "/finance-hub",
