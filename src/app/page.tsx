@@ -5,7 +5,7 @@ import Education from "@/components/Education";
 import Projects from "@/components/Projects";
 
 export const metadata: Metadata = {
-  title: "Aviv Oron",
+  title: "avivo.dev",
 };
 
 export default function Home() {
