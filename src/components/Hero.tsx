@@ -1,6 +1,8 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Image from "next/image";
+
 
 const GITHUB_URL = "https://github.com/AvivOron";
 const LINKEDIN_URL = "https://www.linkedin.com/in/aviv-oron-9569616b/";
@@ -42,6 +44,13 @@ export default function Hero() {
           transition: "opacity 0.7s ease, transform 0.7s ease",
         }}
       >
+        <Image
+          src="/images/aviv.png"
+          alt="Aviv Oron"
+          width={120}
+          height={120}
+          className="rounded-full"
+        />
         {/* Name */}
         <h1 className="text-6xl font-bold tracking-tight text-white sm:text-7xl">
           Aviv Oron
