@@ -54,7 +54,7 @@ export default function Hero() {
 
         {/* Personal */}
         <p className="text-sm text-white/30 leading-relaxed max-w-sm">
-          Dad to Noga 👧 &amp; Tom 👦.<br />Husband to Inbar 👩‍🦱.
+          Dad to Noga 👧 &amp; Tom 👦.<br />Husband to Inbar 👩‍🦱.<br />Pizza enthusiast 🍕, skipper ⛵, scuba diver 🤿.
         </p>
 
         {/* Social links */}

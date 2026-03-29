@@ -26,9 +26,6 @@ export default function Education() {
     <section id="education" className="relative px-6 pb-24">
       <div className="mx-auto max-w-4xl">
         <div className="mb-12 flex flex-col gap-2">
-          <span className="font-mono text-xs tracking-widest text-white/30 uppercase">
-            education
-          </span>
           <h2 className="text-3xl font-bold text-white tracking-tight">
             Education
           </h2>

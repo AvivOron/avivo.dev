@@ -14,7 +14,7 @@ const experience = [
     role: "Sr. Software Engineer · Engineering Manager",
     company: "ZipRecruiter",
     companyHref: "https://www.ziprecruiter.com",
-    period: "7+ years",
+    period: "8 years",
     current: false,
   },
   {
