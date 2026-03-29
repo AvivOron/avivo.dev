@@ -20,6 +20,19 @@ export const metadata: Metadata = {
   },
 };
 
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: "Aviv Oron",
+  url: "https://avivo.dev",
+  jobTitle: "Software Engineer",
+  description: "Software engineer. Building things that matter.",
+  sameAs: [
+    "https://github.com/AvivOron",
+    "https://www.linkedin.com/in/aviv-oron-9569616b/",
+  ],
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -27,6 +40,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+      </head>
       <body
         className={`${GeistSans.variable} ${GeistMono.variable} antialiased`}
       >
