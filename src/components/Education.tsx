@@ -46,17 +46,25 @@ export default function Education() {
           <div className="flex-shrink-0 flex items-center justify-center w-8">
             <span className="h-2 w-2 rounded-full bg-white/20" />
           </div>
-          <div className="flex flex-1 flex-col gap-0.5 sm:flex-row sm:items-center sm:gap-3">
-            <span className="text-white/85 font-medium text-sm">B.Sc. Computer Science</span>
-            <span className="hidden sm:block text-white/20">·</span>
-            <a
-              href="https://www.bgu.ac.il"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-sm text-white/45 hover:text-white/70 transition-colors"
-            >
-              Ben-Gurion University
-            </a>
+          <div className="flex flex-1 items-center gap-3">
+            <div className="flex flex-col sm:flex-row sm:items-center sm:gap-3">
+              <span className="text-white/85 font-medium text-sm">
+                B.Sc. Computer Science
+              </span>
+              <span className="hidden sm:block text-white/20">·</span>
+              <a
+                href="https://www.bgu.ac.il"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-sm text-white/45 hover:text-white/70 transition-colors"
+              >
+                Ben-Gurion University
+              </a>
+            </div>
+
+            <span className="ml-auto font-mono text-xs text-white/25 whitespace-nowrap">
+              2015–2017
+            </span>
           </div>
         </div>
 

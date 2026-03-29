@@ -6,7 +6,7 @@ const experience = [
   {
     role: "Sr. Software Engineer",
     company: "Alice",
-    companyHref: "https://www.linkedin.com/company/alice-io",
+    companyHref: "https://alice.io",
     period: "Present",
     current: true,
   },
@@ -15,6 +15,13 @@ const experience = [
     company: "ZipRecruiter",
     companyHref: "https://www.ziprecruiter.com",
     period: "7+ years",
+    current: false,
+  },
+  {
+    role: "Software Engineer",
+    company: "Sizmek (acquired by Amazon)",
+    companyHref: "https://www.linkedin.com/company/sizmek",
+    period: "1 year",
     current: false,
   },
   {
