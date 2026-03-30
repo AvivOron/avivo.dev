@@ -86,11 +86,13 @@ function ProjectCard({ project }: { project: Project }) {
   return (
     <div
       ref={ref}
-      className="group relative flex flex-col gap-4 rounded-2xl border border-white/8 bg-white/3 p-6 backdrop-blur-sm transition-all duration-300 hover:border-white/15 hover:bg-white/6"
+      className="group relative flex flex-col gap-4 rounded-2xl border border-white/10 bg-white/3 p-6 backdrop-blur-sm hover:border-white/40 hover:bg-white/5"
       style={{
         opacity: visible ? 1 : 0,
         transform: visible ? "translateY(0)" : "translateY(20px)",
-        transition: "opacity 0.6s ease, transform 0.6s ease, border-color 0.3s, background-color 0.3s",
+        transition: visible
+          ? "border-color 0.3s, background-color 0.3s"
+          : "opacity 0.6s ease, transform 0.6s ease",
       }}
     >
       {/* Glow on hover */}
