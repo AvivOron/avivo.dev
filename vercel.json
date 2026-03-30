@@ -2,6 +2,10 @@
   "framework": "nextjs",
   "rewrites": [
     {
+      "source": "/guess-who/api/:path*",
+      "destination": "https://guess-who-sigma.vercel.app/api/:path*"
+    },
+    {
       "source": "/api/:path*",
       "destination": "https://finance-hub-umber.vercel.app/finance-hub/api/:path*"
     },
