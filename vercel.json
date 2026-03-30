@@ -12,6 +12,14 @@
     {
       "source": "/finance-hub/:path*",
       "destination": "https://finance-hub-umber.vercel.app/finance-hub/:path*"
+    },
+    {
+      "source": "/guess-who",
+      "destination": "https://guess-who-sigma.vercel.app/guess-who"
+    },
+    {
+      "source": "/guess-who/:path*",
+      "destination": "https://guess-who-sigma.vercel.app/guess-who/:path*"
     }
   ]
 }

@@ -12,6 +12,15 @@ const projects = [
     codeHref: "https://github.com/AvivOron/finance-hub",
     status: "active",
   },
+  {
+    name: "Guess Who",
+    description:
+      "Multiplayer guessing game. Players take turns in the hot seat, asking yes/no questions to guess a hidden word from a randomlly selected category.",
+    tags: ["TypeScript", "Multiplayer", "Game"],
+    appHref: "/guess-who",
+    codeHref: "https://github.com/AvivOron/guess-who",
+    status: "active",
+  },
 ];
 
 export default function Projects() {
