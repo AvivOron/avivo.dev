@@ -26,6 +26,10 @@
       "destination": "https://guess-who-sigma.vercel.app/:path*"
     },
     {
+      "source": "/tales-and-choices/api/:path*",
+      "destination": "https://tails-and-choices.vercel.app/tales-and-choices/api/:path*"
+    },
+    {
       "source": "/tales-and-choices",
       "destination": "https://tails-and-choices.vercel.app/tales-and-choices"
     },
