@@ -21,6 +21,15 @@ const projects = [
     codeHref: "https://github.com/AvivOron/guess-who",
     status: "active",
   },
+  {
+    name: "Tales & Choices",
+    description:
+      "Interactive Hebrew storytelling app for toddlers. Create a hero, pick companions and a setting, then shape the story through choices — powered by Gemini AI.",
+    tags: ["TypeScript", "Hebrew", "AI", "Kids"],
+    appHref: "/tales-and-choices",
+    codeHref: "https://github.com/AvivOron/tails-and-choices",
+    status: "active",
+  },
 ];
 
 export default function Projects() {
