@@ -34,8 +34,8 @@
       "destination": "https://tails-and-choices.vercel.app/8c777fc888d5e4ea/:path*"
     },
     {
-      "source": "/2b0949b76f688695/:path*",
-      "destination": "https://guess-who-sigma.vercel.app/2b0949b76f688695/:path*"
+      "source": "/guess-who/_vercel/insights/:path*",
+      "destination": "https://guess-who-sigma.vercel.app/_vercel/insights/:path*"
     },
     {
       "source": "/tales-and-choices/api/:path*",
