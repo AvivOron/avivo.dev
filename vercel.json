@@ -10,6 +10,10 @@
       "destination": "https://finance-hub-umber.vercel.app/finance-hub/api/:path*"
     },
     {
+      "source": "/055ca13950b298c1/:path*",
+      "destination": "https://finance-hub-umber.vercel.app/055ca13950b298c1/:path*"
+    },
+    {
       "source": "/finance-hub",
       "destination": "https://finance-hub-umber.vercel.app/finance-hub"
     },
