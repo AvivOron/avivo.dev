@@ -100,6 +100,22 @@ export default function Projects() {
   );
 }
 
+/** Returns touch handlers that call onLeft/onRight after a 40px horizontal swipe. */
+function useSwipe(onLeft: () => void, onRight: () => void) {
+  const startX = useRef<number | null>(null);
+  return {
+    onTouchStart: (e: React.TouchEvent) => {
+      startX.current = e.touches[0].clientX;
+    },
+    onTouchEnd: (e: React.TouchEvent) => {
+      if (startX.current === null) return;
+      const dx = e.changedTouches[0].clientX - startX.current;
+      if (Math.abs(dx) > 40) dx < 0 ? onLeft() : onRight();
+      startX.current = null;
+    },
+  };
+}
+
 type Project = {
   name: string;
   description: string;
@@ -120,6 +136,9 @@ function Lightbox({
   onClose: () => void;
 }) {
   const [active, setActive] = useState(initialIndex);
+  const prev = () => setActive((s) => (s === 0 ? screenshots.length - 1 : s - 1));
+  const next = () => setActive((s) => (s === screenshots.length - 1 ? 0 : s + 1));
+  const swipe = useSwipe(next, prev);
 
   // Close on Escape, navigate with arrow keys
   useEffect(() => {
@@ -144,6 +163,7 @@ function Lightbox({
     <div
       className="fixed inset-0 z-50 flex items-center justify-center bg-black/85 backdrop-blur-sm"
       onClick={onClose}
+      {...swipe}
     >
       {/* Image — stop propagation so clicking it doesn't close */}
       <div onClick={(e) => e.stopPropagation()}>
@@ -234,6 +254,11 @@ function ProjectCard({
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
   const hasScreenshots = project.screenshots && project.screenshots.length > 0;
   const expanded = hovered || mobileFocused;
+  const total = project.screenshots?.length ?? 0;
+  const carouselSwipe = useSwipe(
+    () => setActiveSlide((s) => (s === total - 1 ? 0 : s + 1)),
+    () => setActiveSlide((s) => (s === 0 ? total - 1 : s - 1))
+  );
 
   useEffect(() => {
     const el = ref.current;
@@ -338,7 +363,7 @@ function ProjectCard({
             <div className="overflow-hidden">
               <div className="pt-2 pb-1">
                 {/* Slides */}
-                <div className="relative overflow-hidden rounded-xl border border-white/8 aspect-video bg-white/5">
+                <div className="relative overflow-hidden rounded-xl border border-white/8 aspect-video bg-white/5" {...carouselSwipe}>
                   {project.screenshots!.map((src, i) => (
                     <div
                       key={src}
