@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 
 const projects = [
   {
@@ -50,6 +50,20 @@ const projects = [
 ];
 
 export default function Projects() {
+  const [focusedIndex, setFocusedIndex] = useState<number | null>(null);
+  const ratiosRef = useRef<number[]>(projects.map(() => 0));
+
+  const handleRatio = useCallback((index: number, ratio: number) => {
+    ratiosRef.current[index] = ratio;
+    const max = Math.max(...ratiosRef.current);
+    const isTouch = window.matchMedia("(hover: none)").matches;
+    if (isTouch && max > 0.6) {
+      setFocusedIndex(ratiosRef.current.indexOf(max));
+    } else if (!isTouch) {
+      setFocusedIndex(null);
+    }
+  }, []);
+
   return (
     <section id="projects" className="relative px-6 py-32">
       {/* Section heading */}
@@ -68,8 +82,14 @@ export default function Projects() {
 
         {/* Project grid */}
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-          {projects.map((project) => (
-            <ProjectCard key={project.name} project={project} />
+          {projects.map((project, i) => (
+            <ProjectCard
+              key={project.name}
+              project={project}
+              index={i}
+              mobileFocused={focusedIndex === i}
+              onIntersectRatio={handleRatio}
+            />
           ))}
 
           {/* Placeholder card */}
@@ -125,48 +145,45 @@ function Lightbox({
       className="fixed inset-0 z-50 flex items-center justify-center bg-black/85 backdrop-blur-sm"
       onClick={onClose}
     >
-      {/* Image container — stop propagation so clicking the image itself doesn't close */}
-      <div
-        className="relative flex max-h-[90vh] max-w-[90vw] items-center justify-center"
-        onClick={(e) => e.stopPropagation()}
-      >
-        <div className="relative">
-          <Image
-            src={screenshots[active]}
-            alt={`Screenshot ${active + 1}`}
-            width={1400}
-            height={900}
-            className="max-h-[85vh] max-w-[85vw] rounded-xl object-contain shadow-2xl"
-            priority
-          />
-        </div>
-
-        {/* Prev arrow */}
-        {screenshots.length > 1 && (
-          <button
-            onClick={() =>
-              setActive((s) => (s === 0 ? screenshots.length - 1 : s - 1))
-            }
-            className="absolute -left-12 flex h-9 w-9 items-center justify-center rounded-full bg-white/10 text-white/80 hover:bg-white/20 transition-all text-xl"
-            aria-label="Previous"
-          >
-            ‹
-          </button>
-        )}
-
-        {/* Next arrow */}
-        {screenshots.length > 1 && (
-          <button
-            onClick={() =>
-              setActive((s) => (s === screenshots.length - 1 ? 0 : s + 1))
-            }
-            className="absolute -right-12 flex h-9 w-9 items-center justify-center rounded-full bg-white/10 text-white/80 hover:bg-white/20 transition-all text-xl"
-            aria-label="Next"
-          >
-            ›
-          </button>
-        )}
+      {/* Image — stop propagation so clicking it doesn't close */}
+      <div onClick={(e) => e.stopPropagation()}>
+        <Image
+          src={screenshots[active]}
+          alt={`Screenshot ${active + 1}`}
+          width={1400}
+          height={900}
+          className="max-h-[85vh] max-w-[85vw] rounded-xl object-contain shadow-2xl"
+          priority
+        />
       </div>
+
+      {/* Prev arrow — fixed to viewport edge */}
+      {screenshots.length > 1 && (
+        <button
+          onClick={(e) => {
+            e.stopPropagation();
+            setActive((s) => (s === 0 ? screenshots.length - 1 : s - 1));
+          }}
+          className="absolute left-3 top-1/2 -translate-y-1/2 flex h-9 w-9 items-center justify-center rounded-full bg-white/10 text-white/80 hover:bg-white/20 transition-all text-xl"
+          aria-label="Previous"
+        >
+          ‹
+        </button>
+      )}
+
+      {/* Next arrow — fixed to viewport edge */}
+      {screenshots.length > 1 && (
+        <button
+          onClick={(e) => {
+            e.stopPropagation();
+            setActive((s) => (s === screenshots.length - 1 ? 0 : s + 1));
+          }}
+          className="absolute right-3 top-1/2 -translate-y-1/2 flex h-9 w-9 items-center justify-center rounded-full bg-white/10 text-white/80 hover:bg-white/20 transition-all text-xl"
+          aria-label="Next"
+        >
+          ›
+        </button>
+      )}
 
       {/* Close button */}
       <button
@@ -199,33 +216,56 @@ function Lightbox({
   );
 }
 
-function ProjectCard({ project }: { project: Project }) {
+function ProjectCard({
+  project,
+  index,
+  mobileFocused,
+  onIntersectRatio,
+}: {
+  project: Project;
+  index: number;
+  mobileFocused: boolean;
+  onIntersectRatio: (index: number, ratio: number) => void;
+}) {
   const ref = useRef<HTMLDivElement>(null);
   const [visible, setVisible] = useState(false);
   const [hovered, setHovered] = useState(false);
   const [activeSlide, setActiveSlide] = useState(0);
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
   const hasScreenshots = project.screenshots && project.screenshots.length > 0;
+  const expanded = hovered || mobileFocused;
 
   useEffect(() => {
     const el = ref.current;
     if (!el) return;
-    const observer = new IntersectionObserver(
+    // Visibility observer for entry animation (fires once)
+    const visibilityObserver = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
           setVisible(true);
-          observer.disconnect();
+          visibilityObserver.disconnect();
         }
       },
       { threshold: 0.15 }
     );
-    observer.observe(el);
-    return () => observer.disconnect();
-  }, []);
+    visibilityObserver.observe(el);
+
+    // Ratio observer for mobile focus detection (continuous)
+    const ratioObserver = new IntersectionObserver(
+      ([entry]) => onIntersectRatio(index, entry.intersectionRatio),
+      { threshold: [0, 0.25, 0.5, 0.75, 1.0] }
+    );
+    ratioObserver.observe(el);
+
+    return () => {
+      visibilityObserver.disconnect();
+      ratioObserver.disconnect();
+    };
+  }, [onIntersectRatio]);
 
   useEffect(() => {
-    if (!hovered) setActiveSlide(0);
-  }, [hovered]);
+    if (!expanded) setActiveSlide(0);
+  }, [expanded]);
 
   return (
     <>
@@ -291,7 +331,7 @@ function ProjectCard({ project }: { project: Project }) {
           <div
             style={{
               display: "grid",
-              gridTemplateRows: hovered ? "1fr" : "0fr",
+              gridTemplateRows: expanded ? "1fr" : "0fr",
               transition: "grid-template-rows 0.35s ease",
             }}
           >
