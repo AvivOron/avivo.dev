@@ -16,6 +16,7 @@ const projects = [
       "/screenshots/finance-hub-1.jpg",
       "/screenshots/finance-hub-2.jpg",
       "/screenshots/finance-hub-3.jpg",
+      "/screenshots/finance-hub-4.jpg",
     ],
   },
   {
