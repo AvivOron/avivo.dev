@@ -22,11 +22,11 @@
       "destination": "https://finance-hub-umber.vercel.app/finance-hub/:path*"
     },
     {
-      "source": "/guess-who",
+      "source": "/guess-who/play",
       "destination": "https://guess-who-sigma.vercel.app/"
     },
     {
-      "source": "/guess-who/:path*",
+      "source": "/guess-who/play/:path*",
       "destination": "https://guess-who-sigma.vercel.app/:path*"
     },
     {

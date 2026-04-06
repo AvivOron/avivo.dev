@@ -4,7 +4,7 @@ import { GeistMono } from "geist/font/mono";
 import "./globals.css";
 import { Analytics } from "@vercel/analytics/next";
 
-const BASE_URL = "https://avivo.dev";
+const BASE_URL = "https://www.avivo.dev";
 
 export const metadata: Metadata = {
   metadataBase: new URL(BASE_URL),

@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://avivo.dev/sitemap.xml
+Sitemap: https://www.avivo.dev/sitemap.xml
