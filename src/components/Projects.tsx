@@ -7,8 +7,8 @@ const projects = [
   {
     name: "Finance Hub",
     description:
-      "Monthly financial net worth tracking desktop app. Visualize and manage your finances with clarity.",
-    tags: ["TypeScript", "Desktop", "Finance"],
+      "Web app for tracking net worth month by month. Visualize your financial history and project where you're headed.",
+    tags: ["TypeScript", "Web", "Finance"],
     appHref: "/finance-hub",
     codeHref: "https://github.com/AvivOron/finance-hub",
     status: "active",
