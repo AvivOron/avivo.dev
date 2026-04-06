@@ -59,11 +59,11 @@
     },
     {
       "source": "/magna-mind",
-      "destination": "https://magna-mind.vercel.app/"
+      "destination": "https://magna-mind.vercel.app/magna-mind"
     },
     {
       "source": "/magna-mind/:path*",
-      "destination": "https://magna-mind.vercel.app/:path*"
+      "destination": "https://magna-mind.vercel.app/magna-mind/:path*"
     }
   ]
 }
