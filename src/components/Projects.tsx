@@ -35,6 +35,16 @@ const projects = [
     ],
   },
   {
+    name: "Magna Mind",
+    description:
+      "Snap a photo of your magnetic tiles, let AI count and identify them, then get personalized building challenges tailored to exactly what you have.",
+    tags: ["TypeScript", "AI", "Kids"],
+    appHref: "/magna-mind",
+    codeHref: "https://github.com/AvivOron/magna-mind",
+    status: "alpha",
+    screenshots: [],
+  },
+  {
     name: "Tales & Choices",
     description:
       "Interactive Hebrew storytelling app for toddlers. Create a hero, pick companions and a setting, then shape the story through choices — powered by Gemini AI.",
@@ -327,6 +337,12 @@ function ProjectCard({
               <span className="flex items-center gap-1.5 text-xs text-emerald-400/70 font-mono">
                 <span className="h-1 w-1 rounded-full bg-emerald-400" />
                 active
+              </span>
+            )}
+            {project.status === "alpha" && (
+              <span className="flex items-center gap-1.5 text-xs text-amber-400/70 font-mono">
+                <span className="h-1 w-1 rounded-full bg-amber-400" />
+                alpha
               </span>
             )}
           </div>
