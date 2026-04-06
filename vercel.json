@@ -58,6 +58,10 @@
       "destination": "https://tails-and-choices.vercel.app/tales-and-choices/:path*"
     },
     {
+      "source": "/magna-mind/api/:path*",
+      "destination": "https://magna-mind.vercel.app/magna-mind/api/:path*"
+    },
+    {
       "source": "/magna-mind",
       "destination": "https://magna-mind.vercel.app/magna-mind"
     },
