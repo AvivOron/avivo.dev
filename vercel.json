@@ -30,6 +30,14 @@
       "destination": "https://guess-who-sigma.vercel.app/:path*"
     },
     {
+      "source": "/guess-who/assets/:path*",
+      "destination": "https://guess-who-sigma.vercel.app/assets/:path*"
+    },
+    {
+      "source": "/guess-who/og-image.png",
+      "destination": "https://guess-who-sigma.vercel.app/og-image.png"
+    },
+    {
       "source": "/8c777fc888d5e4ea/:path*",
       "destination": "https://tails-and-choices.vercel.app/8c777fc888d5e4ea/:path*"
     },
