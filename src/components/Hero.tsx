@@ -58,7 +58,7 @@ export default function Hero() {
 
         {/* Tagline */}
         <p className="text-lg text-white/50 leading-relaxed max-w-md">
-          Software engineer. Building things that matter.
+          Software engineer. Building things that matter. To me.
         </p>
 
         {/* Personal */}

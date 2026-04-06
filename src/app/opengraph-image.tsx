@@ -83,7 +83,7 @@ export default async function OgImage() {
             letterSpacing: "-0.3px",
           }}
         >
-          Software engineer. Building things that matter.
+          Software engineer. Building things that matter. To me.
         </div>
 
         {/* Domain badge */}
