@@ -71,11 +71,11 @@
     },
     {
       "source": "/night-watch",
-      "destination": "https://night-watch-avivo.vercel.app/night-watch"
+      "destination": "https://night-watch-sooty.vercel.app/night-watch"
     },
     {
       "source": "/night-watch/:path*",
-      "destination": "https://night-watch-avivo.vercel.app/night-watch/:path*"
+      "destination": "https://night-watch-sooty.vercel.app/night-watch/:path*"
     }
   ]
 }

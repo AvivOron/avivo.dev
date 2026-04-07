@@ -51,7 +51,7 @@ const projects = [
     tags: ["TypeScript", "Mobile", "Astronomy", "AR"],
     appHref: "/night-watch",
     codeHref: "https://github.com/AvivOron/night-watch",
-    status: "active",
+    status: "alpha",
     screenshots: [],
   },
   {
