@@ -45,6 +45,16 @@ const projects = [
     screenshots: [],
   },
   {
+    name: "Night Watch",
+    description:
+      "Personalized stargazing assistant. Calibrate your sky window using your phone's compass and gyroscope, then see exactly which planets, moons, and galaxies are visible from your spot — with a live AR overlay.",
+    tags: ["TypeScript", "Mobile", "Astronomy", "AR"],
+    appHref: "/night-watch",
+    codeHref: "https://github.com/AvivOron/night-watch",
+    status: "active",
+    screenshots: [],
+  },
+  {
     name: "Tales & Choices",
     description:
       "Interactive Hebrew storytelling app for toddlers. Create a hero, pick companions and a setting, then shape the story through choices — powered by Gemini AI.",

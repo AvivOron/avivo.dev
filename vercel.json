@@ -68,6 +68,14 @@
     {
       "source": "/magna-mind/:path*",
       "destination": "https://magna-mind.vercel.app/magna-mind/:path*"
+    },
+    {
+      "source": "/night-watch",
+      "destination": "https://night-watch-avivo.vercel.app/night-watch"
+    },
+    {
+      "source": "/night-watch/:path*",
+      "destination": "https://night-watch-avivo.vercel.app/night-watch/:path*"
     }
   ]
 }
