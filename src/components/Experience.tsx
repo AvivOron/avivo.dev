@@ -123,66 +123,71 @@ function ExperienceRow({ item, index }: { item: ExperienceItem; index: number })
   return (
     <div
       ref={ref}
-      className="group flex gap-6 border-t border-white/5 py-6 last:border-b"
+      className="group border-t border-white/5 py-6 last:border-b"
       style={{
         opacity: visible ? 1 : 0,
         transform: visible ? "translateY(0)" : "translateY(16px)",
         transition: `opacity 0.5s ease ${index * 0.08}s, transform 0.5s ease ${index * 0.08}s`,
       }}
     >
-      {/* Dot */}
-      <div className="flex-shrink-0 flex items-center justify-center w-8">
-        <span
-          className={`h-2 w-2 rounded-full ${item.current ? "bg-emerald-400" : "bg-white/20"}`}
-        />
-      </div>
+      <div className="flex gap-4 sm:gap-6">
+        {/* Dot */}
+        <div className="flex w-8 shrink-0 items-start justify-center pt-1 sm:items-center sm:pt-0">
+          <span
+            className={`h-2 w-2 rounded-full ${item.current ? "bg-emerald-400" : "bg-white/20"}`}
+          />
+        </div>
 
-      {/* Role + Company */}
-      <div className="flex-1">
-        <div className="flex flex-col gap-0.5 sm:flex-row sm:items-center sm:gap-3">
-          <span className="text-white/85 font-medium text-sm">{item.role}</span>
-          <span className="hidden sm:block text-white/20">·</span>
-          {item.companyHref ? (
-            <div className="flex items-baseline gap-2">
-              <a
-                href={item.companyHref}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-sm text-white/45 hover:text-white/70 transition-colors"
-              >
-                {item.company}
-              </a>
-              {item.hiringHref && (
-                <>
-                  <span className="text-white/20">·</span>
-                  <a
-                    href={item.hiringHref}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-sm text-emerald-300/80 transition-colors hover:text-emerald-200"
-                  >
-                    We are hiring!
-                  </a>
-                </>
-              )}
+        <div className="min-w-0 flex-1">
+          <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between sm:gap-6">
+            <div className="min-w-0">
+              <div className="flex flex-col gap-0.5 sm:flex-row sm:items-center sm:gap-3">
+                <span className="text-sm font-medium text-white/85">{item.role}</span>
+                <span className="hidden text-white/20 sm:block">·</span>
+                {item.companyHref ? (
+                  <div className="flex flex-wrap items-baseline gap-x-2 gap-y-1">
+                    <a
+                      href={item.companyHref}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-sm text-white/45 transition-colors hover:text-white/70"
+                    >
+                      {item.company}
+                    </a>
+                    {item.hiringHref && (
+                      <>
+                        <span className="text-white/20">·</span>
+                        <a
+                          href={item.hiringHref}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-sm text-emerald-300/80 transition-colors hover:text-emerald-200"
+                        >
+                          We are hiring!
+                        </a>
+                      </>
+                    )}
+                  </div>
+                ) : (
+                  <span className="text-sm text-white/45">{item.company}</span>
+                )}
+              </div>
             </div>
-          ) : (
-            <span className="text-sm text-white/45">{item.company}</span>
+
+            {item.period && (
+              <span className="font-mono text-xs text-white/25 sm:shrink-0">
+                {item.period}
+              </span>
+            )}
+          </div>
+
+          {item.description && (
+            <p className="mt-2 max-w-2xl text-sm leading-6 text-white/55">
+              {item.description}
+            </p>
           )}
         </div>
-        {item.description && (
-          <p className="mt-2 max-w-2xl text-sm leading-6 text-white/55">
-            {item.description}
-          </p>
-        )}
       </div>
-
-      {/* Period */}
-      {item.period && (
-        <span className="flex-shrink-0 font-mono text-xs text-white/25">
-          {item.period}
-        </span>
-      )}
     </div>
   );
 }
