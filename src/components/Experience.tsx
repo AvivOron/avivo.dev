@@ -2,12 +2,26 @@
 
 import { useEffect, useRef, useState } from "react";
 
+function getMonthCountSince(startDate: Date) {
+  const now = new Date();
+  let months =
+    (now.getFullYear() - startDate.getFullYear()) * 12 +
+    (now.getMonth() - startDate.getMonth());
+
+  if (now.getDate() < startDate.getDate()) {
+    months -= 1;
+  }
+
+  const safeMonths = Math.max(0, months);
+  return `${safeMonths} month${safeMonths === 1 ? "" : "s"}`;
+}
+
 const experience = [
   {
     role: "Sr. Software Engineer",
     company: "Alice",
     companyHref: "https://alice.io",
-    period: "Present",
+    period: `Present · ${getMonthCountSince(new Date(2025, 6, 25))}`,
     current: true,
     description:
       "Full stack engineer on the SaaS platform team, with a key role in building the Auto Red Teaming product from day one through end-to-end delivery. Also contributed to the platform migration from Vue to React and led the rewrite of the authentication and identity architecture.",
@@ -16,16 +30,26 @@ const experience = [
     role: "Sr. Software Engineer · Engineering Manager",
     company: "ZipRecruiter",
     companyHref: "https://www.ziprecruiter.com",
-    period: "8 years",
+    period: "2017-2025",
     current: false,
     description:
       "Worked across several high-impact product areas, including SEO, messaging, and resume search. As part of the SEO engineering team, helped build and scale the programmatic creation of millions of highly relevant, search-optimized job pages for job seekers across the US. Later contributed to the messaging platform responsible for orchestrating communications across multiple products to maximize jobseeker fit and engagement at very large scale, and went on to lead the team that rebuilt the resume database experience, a major revenue-driving employer-facing product.",
   },
   {
+    role: "Founding Engineer",
+    company: "Hypertunity",
+    companyHref:
+      "https://tracxn.com/d/companies/hypertunity/__uwE0CvQj8Et-Ao06RY2AJMqOTbGHWavWIqYcfAa5vjs",
+    period: "2015-2016",
+    current: false,
+    description:
+      "Served as the first engineer while completing my B.Sc. studies, taking end-to-end ownership of full stack development in an early-stage startup environment and delivering integrations for paying clients.",
+  },
+  {
     role: "Software Engineer",
     company: "Sizmek (acquired by Amazon)",
     companyHref: "https://www.linkedin.com/company/sizmek",
-    period: "1 year",
+    period: "2013-2014",
     current: false,
     description:
       "Worked as a full stack engineer within the analytics group, building customer-facing analytics capabilities and reporting tools. Contributed to features that helped customers monitor campaign performance, access operational insights, and make better data-driven decisions.",
@@ -34,7 +58,7 @@ const experience = [
     role: "Software Engineer",
     company: "Unit 8200",
     companyHref: null,
-    period: "5 years",
+    period: "2008-2013",
     current: false,
     description:
       "Mamas course alumni (Gamma Project), working across multiple teams on mission-critical systems within the engineering organization.",
