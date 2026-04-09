@@ -21,6 +21,7 @@ const experience = [
     role: "Sr. Software Engineer",
     company: "Alice",
     companyHref: "https://alice.io",
+    hiringHref: "https://alice.io/careers?coref=1.10.rC0_D18&t=1770925814267",
     period: `Present · ${getMonthCountSince(new Date(2025, 6, 25))}`,
     current: true,
     description:
@@ -93,6 +94,7 @@ type ExperienceItem = {
   role: string;
   company: string;
   companyHref: string | null;
+  hiringHref?: string;
   period: string | null;
   current: boolean;
   description?: string;
@@ -141,14 +143,29 @@ function ExperienceRow({ item, index }: { item: ExperienceItem; index: number })
           <span className="text-white/85 font-medium text-sm">{item.role}</span>
           <span className="hidden sm:block text-white/20">·</span>
           {item.companyHref ? (
-            <a
-              href={item.companyHref}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-sm text-white/45 hover:text-white/70 transition-colors"
-            >
-              {item.company}
-            </a>
+            <div className="flex items-baseline gap-2">
+              <a
+                href={item.companyHref}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-sm text-white/45 hover:text-white/70 transition-colors"
+              >
+                {item.company}
+              </a>
+              {item.hiringHref && (
+                <>
+                  <span className="text-white/20">·</span>
+                  <a
+                    href={item.hiringHref}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-sm text-emerald-300/80 transition-colors hover:text-emerald-200"
+                  >
+                    We are hiring!
+                  </a>
+                </>
+              )}
+            </div>
           ) : (
             <span className="text-sm text-white/45">{item.company}</span>
           )}
