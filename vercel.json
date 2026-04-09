@@ -76,6 +76,14 @@
     {
       "source": "/night-watch/:path*",
       "destination": "https://night-watch-sooty.vercel.app/night-watch/:path*"
+    },
+    {
+      "source": "/delta-swing",
+      "destination": "https://delta-swing.vercel.app/delta-swing"
+    },
+    {
+      "source": "/delta-swing/:path*",
+      "destination": "https://delta-swing.vercel.app/delta-swing/:path*"
     }
   ]
 }

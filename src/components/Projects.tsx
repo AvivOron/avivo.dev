@@ -30,6 +30,16 @@ const projects = [
     screenshots: [],
   },
   {
+    name: "Delta Swing",
+    description:
+      "Stock pattern finder that scans all NYSE tickers daily from a Raspberry Pi. Detects ZigZag swing patterns and surfaces buy signals when a stock bounces off recent support.",
+    tags: ["TypeScript", "Python", "Finance", "Raspberry Pi"],
+    appHref: "/delta-swing",
+    codeHref: "https://github.com/AvivOron/delta-swing",
+    status: "active",
+    screenshots: [],
+  },
+  {
     name: "Tales & Choices",
     description:
       "Interactive Hebrew storytelling app for toddlers. Create a hero, pick companions and a setting, then shape the story through choices — powered by Gemini AI.",
