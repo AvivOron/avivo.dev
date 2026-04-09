@@ -9,6 +9,8 @@ const experience = [
     companyHref: "https://alice.io",
     period: "Present",
     current: true,
+    description:
+      "Full stack engineer on the SaaS platform team, with a key role in building the Auto Red Teaming product from day one through end-to-end delivery. Also contributed to the platform migration from Vue to React and led the rewrite of the authentication and identity architecture.",
   },
   {
     role: "Sr. Software Engineer · Engineering Manager",
@@ -16,6 +18,8 @@ const experience = [
     companyHref: "https://www.ziprecruiter.com",
     period: "8 years",
     current: false,
+    description:
+      "Worked across several high-impact product areas, including SEO, messaging, and resume search. As part of the SEO engineering team, helped build and scale the programmatic creation of millions of highly relevant, search-optimized job pages for job seekers across the US. Later contributed to the messaging platform responsible for orchestrating communications across multiple products to maximize jobseeker fit and engagement at very large scale, and went on to lead the team that rebuilt the resume database experience, a major revenue-driving employer-facing product.",
   },
   {
     role: "Software Engineer",
@@ -23,6 +27,8 @@ const experience = [
     companyHref: "https://www.linkedin.com/company/sizmek",
     period: "1 year",
     current: false,
+    description:
+      "Worked as a full stack engineer within the analytics group, building customer-facing analytics capabilities and reporting tools. Contributed to features that helped customers monitor campaign performance, access operational insights, and make better data-driven decisions.",
   },
   {
     role: "Software Engineer",
@@ -30,6 +36,8 @@ const experience = [
     companyHref: null,
     period: "5 years",
     current: false,
+    description:
+      "Mamas course alumni (Gamma Project), working across multiple teams on mission-critical systems within the engineering organization.",
   },
 ];
 
@@ -63,6 +71,7 @@ type ExperienceItem = {
   companyHref: string | null;
   period: string | null;
   current: boolean;
+  description?: string;
 };
 
 function ExperienceRow({ item, index }: { item: ExperienceItem; index: number }) {
@@ -88,7 +97,7 @@ function ExperienceRow({ item, index }: { item: ExperienceItem; index: number })
   return (
     <div
       ref={ref}
-      className="group flex items-center gap-6 border-t border-white/5 py-6 last:border-b"
+      className="group flex gap-6 border-t border-white/5 py-6 last:border-b"
       style={{
         opacity: visible ? 1 : 0,
         transform: visible ? "translateY(0)" : "translateY(16px)",
@@ -103,20 +112,27 @@ function ExperienceRow({ item, index }: { item: ExperienceItem; index: number })
       </div>
 
       {/* Role + Company */}
-      <div className="flex flex-1 flex-col gap-0.5 sm:flex-row sm:items-center sm:gap-3">
-        <span className="text-white/85 font-medium text-sm">{item.role}</span>
-        <span className="hidden sm:block text-white/20">·</span>
-        {item.companyHref ? (
-          <a
-            href={item.companyHref}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-sm text-white/45 hover:text-white/70 transition-colors"
-          >
-            {item.company}
-          </a>
-        ) : (
-          <span className="text-sm text-white/45">{item.company}</span>
+      <div className="flex-1">
+        <div className="flex flex-col gap-0.5 sm:flex-row sm:items-center sm:gap-3">
+          <span className="text-white/85 font-medium text-sm">{item.role}</span>
+          <span className="hidden sm:block text-white/20">·</span>
+          {item.companyHref ? (
+            <a
+              href={item.companyHref}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-sm text-white/45 hover:text-white/70 transition-colors"
+            >
+              {item.company}
+            </a>
+          ) : (
+            <span className="text-sm text-white/45">{item.company}</span>
+          )}
+        </div>
+        {item.description && (
+          <p className="mt-2 max-w-2xl text-sm leading-6 text-white/55">
+            {item.description}
+          </p>
         )}
       </div>
 
