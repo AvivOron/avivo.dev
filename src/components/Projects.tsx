@@ -107,7 +107,7 @@ export default function Projects() {
             Projects
           </h2>
           <p className="text-white/40 text-sm max-w-md">
-            Things I&apos;m building and experimenting with.
+            Vibe coding adventures, experiments, and things I felt like building.
           </p>
         </div>
 

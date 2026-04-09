@@ -25,7 +25,7 @@ const experience = [
     period: `Present · ${getMonthCountSince(new Date(2025, 6, 25))}`,
     current: true,
     description:
-      "Full stack engineer on the SaaS platform team, with a key role in building the Auto Red Teaming product from day one through end-to-end delivery. Also contributed to the platform migration from Vue to React and led the rewrite of the authentication and identity architecture.",
+      "Full stack engineer on the SaaS platform team, working in a very AI-first environment. Played a key role in building the Auto Red Teaming product from day one through end-to-end delivery, while also contributing to the platform migration from Vue to React and leading the rewrite of the authentication and identity architecture.",
   },
   {
     role: "Sr. Software Engineer · Engineering Manager",
