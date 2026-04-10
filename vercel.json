@@ -84,6 +84,14 @@
     {
       "source": "/delta-swing/:path*",
       "destination": "https://delta-swing.vercel.app/delta-swing/:path*"
+    },
+    {
+      "source": "/victory-gt",
+      "destination": "https://victory-gt.vercel.app/victory-gt"
+    },
+    {
+      "source": "/victory-gt/:path*",
+      "destination": "https://victory-gt.vercel.app/victory-gt/:path*"
     }
   ]
 }

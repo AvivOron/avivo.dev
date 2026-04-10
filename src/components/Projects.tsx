@@ -54,6 +54,16 @@ const projects = [
     ],
   },
   {
+    name: "Victory GT",
+    description:
+      "Live price list and deals for my local supermarket branch. Data is pulled automatically every 3 hours from Israel's mandatory price-transparency registry.",
+    tags: ["TypeScript", "Python", "Hebrew", "Raspberry Pi"],
+    appHref: "/victory-gt",
+    codeHref: "https://github.com/AvivOron/victory-gt",
+    status: "active",
+    screenshots: [],
+  },
+  {
     name: "Guess Who",
     description:
       "Multiplayer guessing game. Players take turns in the hot seat, asking yes/no questions to guess a hidden word from a randomlly selected category.",
