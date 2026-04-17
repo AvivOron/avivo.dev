@@ -4,16 +4,16 @@ import Image from "next/image";
 const PAGE_URL = "https://www.avivo.dev/guess-who";
 
 export const metadata: Metadata = {
-  title: "Guess Who | Multiplayer Hebrew Guessing Game",
+  title: "Guess Who | Team Hebrew Guessing Game",
   description:
-    "Guess Who is a fast multiplayer Hebrew guessing game. Join friends, ask yes-or-no questions, and figure out which Israeli celebrity you were assigned.",
+    "Guess Who is a real-time team Hebrew guessing game. Split into two groups, ask yes-or-no questions, and race the 90-second clock to figure out the hidden word.",
   alternates: {
     canonical: PAGE_URL,
   },
   openGraph: {
-    title: "Guess Who | Multiplayer Hebrew Guessing Game",
+    title: "Guess Who | Team Hebrew Guessing Game",
     description:
-      "A multiplayer Hebrew guessing game for friends. Ask yes-or-no questions, eliminate options, and reveal the hidden character.",
+      "A team-based Hebrew guessing game. One group asks yes-or-no questions, the other holds the secret word and answers. 90 seconds, live scoring, automatic role swaps.",
     url: PAGE_URL,
     type: "website",
     images: [
@@ -21,15 +21,15 @@ export const metadata: Metadata = {
         url: `${PAGE_URL}/og-image.png`,
         width: 1200,
         height: 630,
-        alt: "Guess Who multiplayer game",
+        alt: "Guess Who team guessing game",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Guess Who | Multiplayer Hebrew Guessing Game",
+    title: "Guess Who | Team Hebrew Guessing Game",
     description:
-      "A multiplayer Hebrew guessing game for friends. Ask yes-or-no questions and reveal the hidden character.",
+      "A team-based Hebrew guessing game. Ask yes-or-no questions and race the clock to reveal the hidden word.",
     images: [`${PAGE_URL}/og-image.png`],
   },
 };
@@ -41,10 +41,10 @@ const screenshots = [
 ];
 
 const features = [
-  "Real-time multiplayer rounds for groups playing together on the same page.",
-  "Hebrew-first experience built around Israeli celebrity and category prompts.",
-  "Simple yes-or-no gameplay that works well for parties and quick social sessions.",
-  "No installation required. Open the browser, create a session, and start playing.",
+  "Players auto-split into two teams — no manual setup needed.",
+  "90-second turns with a live countdown. The guessing team can call it early if they crack the word.",
+  "Teams swap roles every round, so everyone gets to guess and answer.",
+  "Live scoreboard tracks points across rounds. No installation — just open a browser and share the code.",
 ];
 
 export default function GuessWhoPage() {
@@ -68,10 +68,10 @@ export default function GuessWhoPage() {
               Guess Who
             </h1>
             <p className="mt-5 max-w-xl text-lg leading-8 text-white/65">
-              A multiplayer Hebrew guessing game built for fast rounds, simple
-              rules, and loud group energy. Each player gets a hidden character,
-              asks yes-or-no questions, and tries to reveal the answer before
-              everyone else.
+              A team-based Hebrew guessing game built for groups. Players
+              auto-split into two teams — one asks yes-or-no questions to crack
+              a hidden word, the other answers and holds the secret. 90 seconds
+              per round, live scoring, and automatic role swaps.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <a
@@ -142,7 +142,7 @@ export default function GuessWhoPage() {
                   Create a room
                 </h3>
                 <p className="mt-2 text-sm leading-7 text-white/55">
-                  Start a session and invite friends into the same live game.
+                  Start a session, share the code, and players auto-split into two teams.
                 </p>
               </article>
               <article className="rounded-2xl border border-white/8 bg-white/4 p-5">
@@ -150,11 +150,10 @@ export default function GuessWhoPage() {
                   02
                 </p>
                 <h3 className="mt-3 text-lg font-semibold text-white">
-                  Ask better questions
+                  Race the clock
                 </h3>
                 <p className="mt-2 text-sm leading-7 text-white/55">
-                  Narrow the field with yes-or-no questions and eliminate wrong
-                  guesses quickly.
+                  The guessing team has 90 seconds to crack the hidden word with yes-or-no questions.
                 </p>
               </article>
               <article className="rounded-2xl border border-white/8 bg-white/4 p-5">
@@ -162,11 +161,10 @@ export default function GuessWhoPage() {
                   03
                 </p>
                 <h3 className="mt-3 text-lg font-semibold text-white">
-                  Reveal the answer
+                  Swap and score
                 </h3>
                 <p className="mt-2 text-sm leading-7 text-white/55">
-                  Make your guess at the right moment and win the round before
-                  anyone else does.
+                  Teams switch roles every round. Points accumulate on a live scoreboard until you decide to stop.
                 </p>
               </article>
             </div>

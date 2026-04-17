@@ -66,16 +66,15 @@ const projects = [
   {
     name: "Guess Who",
     description:
-      "Multiplayer guessing game. Players take turns in the hot seat, asking yes/no questions to guess a hidden word from a randomlly selected category.",
+      "Team-based Hebrew guessing game. Players split into two groups — one group asks yes/no questions to figure out the hidden word while the other answers. 90-second rounds, live scoring, and automatic role swaps.",
     tags: ["TypeScript", "Multiplayer", "Game"],
     appHref: "/guess-who",
     codeHref: "https://github.com/AvivOron/guess-who",
     status: "active",
     screenshots: [
       "/screenshots/guess-who-1.jpg",
-      "/screenshots/guess-who-2.jpg",
-      "/screenshots/guess-who-3.jpg",
-      "/screenshots/guess-who-4.jpg",
+      "/screenshots/guess-who-2.jpeg",
+      "/screenshots/guess-who-3.jpeg",
     ],
   },
   {
