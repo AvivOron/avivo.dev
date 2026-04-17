@@ -36,8 +36,8 @@ export const metadata: Metadata = {
 
 const screenshots = [
   "/screenshots/guess-who-1.jpg",
-  "/screenshots/guess-who-2.jpg",
-  "/screenshots/guess-who-3.jpg",
+  "/screenshots/guess-who-2.jpeg",
+  "/screenshots/guess-who-3.jpeg",
 ];
 
 const features = [
