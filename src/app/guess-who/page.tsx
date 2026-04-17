@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import Image from "next/image";
+import ScreenshotGallery from "./ScreenshotGallery";
 
 const PAGE_URL = "https://www.avivo.dev/guess-who";
 
@@ -34,11 +34,6 @@ export const metadata: Metadata = {
   },
 };
 
-const screenshots = [
-  "/screenshots/guess-who-1.jpg",
-  "/screenshots/guess-who-2.jpeg",
-  "/screenshots/guess-who-3.jpeg",
-];
 
 const features = [
   "Players auto-split into two teams — no manual setup needed.",
@@ -105,25 +100,7 @@ export default function GuessWhoPage() {
             </ul>
           </div>
 
-          <div className="grid w-full max-w-xl grid-cols-2 gap-4">
-            {screenshots.map((src, index) => (
-              <div
-                key={src}
-                className={`relative overflow-hidden rounded-2xl border border-white/10 bg-white/5 ${
-                  index === 0 ? "col-span-2 aspect-[16/9]" : "aspect-[4/5]"
-                }`}
-              >
-                <Image
-                  src={src}
-                  alt={`Guess Who screenshot ${index + 1}`}
-                  fill
-                  className="object-cover"
-                  sizes="(max-width: 1024px) 100vw, 40vw"
-                  priority={index === 0}
-                />
-              </div>
-            ))}
-          </div>
+          <ScreenshotGallery />
         </div>
       </section>
 
