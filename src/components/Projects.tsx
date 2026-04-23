@@ -20,6 +20,16 @@ const projects = [
     ],
   },
   {
+    name: "Wayfarer AI",
+    description:
+      "AI-powered trip planner. Add your must-see spots, set your preferences and accommodation type, then let Gemini build an optimized day-by-day itinerary — clustered by location, respecting opening hours, and aware of whether you're at a hotel or a friend's couch.",
+    tags: ["TypeScript", "AI", "Travel"],
+    appHref: "/wayfarer-ai",
+    codeHref: "https://github.com/AvivOron/wayfarer-ai",
+    status: "active",
+    screenshots: [],
+  },
+  {
     name: "Night Watch",
     description:
       "Personalized stargazing assistant. Calibrate your sky window using your phone's compass and gyroscope, then see exactly which planets, moons, and galaxies are visible from your spot — with a live AR overlay.",
