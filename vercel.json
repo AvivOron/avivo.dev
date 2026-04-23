@@ -2,6 +2,18 @@
   "framework": "nextjs",
   "rewrites": [
     {
+      "source": "/wayfarer-ai/api/:path*",
+      "destination": "https://wayfarer-ai.vercel.app/wayfarer-ai/api/:path*"
+    },
+    {
+      "source": "/wayfarer-ai",
+      "destination": "https://wayfarer-ai.vercel.app/wayfarer-ai"
+    },
+    {
+      "source": "/wayfarer-ai/:path*",
+      "destination": "https://wayfarer-ai.vercel.app/wayfarer-ai/:path*"
+    },
+    {
       "source": "/guess-who/api/:path*",
       "destination": "https://guess-who-sigma.vercel.app/api/:path*"
     },
