@@ -27,6 +27,7 @@ const projects = [
     appHref: "/wayfarer-ai",
     codeHref: "https://github.com/AvivOron/wayfarer-ai",
     status: "active",
+    screenshotAspectRatio: "2/3",
     screenshots: [
       "/screenshots/wayfarer-1.png",
       "/screenshots/wayfarer-2.png",
@@ -43,6 +44,7 @@ const projects = [
     appHref: "/night-watch",
     codeHref: "https://github.com/AvivOron/night-watch",
     status: "active",
+    screenshotAspectRatio: "2/3",
     screenshots: [
       "/screenshots/night-watch-1.png",
       "/screenshots/night-watch-2.png",
@@ -184,6 +186,7 @@ type Project = {
   codeHref: string;
   status: string;
   screenshots?: string[];
+  screenshotAspectRatio?: string;
 };
 
 function Lightbox({
@@ -429,7 +432,7 @@ function ProjectCard({
             <div className="overflow-hidden">
               <div className="pt-2 pb-1">
                 {/* Slides */}
-                <div className="relative overflow-hidden rounded-xl border border-white/8 aspect-video bg-white/5" {...carouselSwipe}>
+                <div className="relative overflow-hidden rounded-xl border border-white/8 bg-white/5" style={{ aspectRatio: project.screenshotAspectRatio ?? "16/9" }} {...carouselSwipe}>
                   {project.screenshots!.map((src, i) => (
                     <div
                       key={src}
