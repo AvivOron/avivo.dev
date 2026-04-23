@@ -27,7 +27,12 @@ const projects = [
     appHref: "/wayfarer-ai",
     codeHref: "https://github.com/AvivOron/wayfarer-ai",
     status: "active",
-    screenshots: [],
+    screenshots: [
+      "/screenshots/wayfarer-1.png",
+      "/screenshots/wayfarer-2.png",
+      "/screenshots/wayfarer-3.png",
+      "/screenshots/wayfarer-4.png",
+    ],
   },
   {
     name: "Night Watch",
