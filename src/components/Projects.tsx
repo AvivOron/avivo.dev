@@ -32,6 +32,7 @@ const projects = [
       "/screenshots/wayfarer-2.png",
       "/screenshots/wayfarer-3.png",
       "/screenshots/wayfarer-4.png",
+      "/screenshots/wayfarer-5.png",
     ],
   },
   {
@@ -42,7 +43,11 @@ const projects = [
     appHref: "/night-watch",
     codeHref: "https://github.com/AvivOron/night-watch",
     status: "active",
-    screenshots: [],
+    screenshots: [
+      "/screenshots/night-watch-1.png",
+      "/screenshots/night-watch-2.png",
+      "/screenshots/night-watch-3.png",
+    ],
   },
   {
     name: "Delta Swing",
@@ -435,7 +440,7 @@ function ProjectCard({
                         src={src}
                         alt={`${project.name} screenshot ${i + 1}`}
                         fill
-                        className="object-cover cursor-zoom-in"
+                        className="object-contain cursor-zoom-in"
                         sizes="(max-width: 640px) 100vw, 50vw"
                         onClick={(e) => {
                           e.preventDefault();
