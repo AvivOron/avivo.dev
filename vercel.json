@@ -2,10 +2,6 @@
   "framework": "nextjs",
   "rewrites": [
     {
-      "source": "/wayfarer-ai/api/:path*",
-      "destination": "https://wayfarer-ai-self.vercel.app/wayfarer-ai/api/:path*"
-    },
-    {
       "source": "/wayfarer-ai",
       "destination": "https://wayfarer-ai-self.vercel.app/wayfarer-ai"
     },
