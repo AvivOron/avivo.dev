@@ -100,6 +100,14 @@
     {
       "source": "/victory-gt/:path*",
       "destination": "https://victory-gt.vercel.app/victory-gt/:path*"
+    },
+    {
+      "source": "/musical-guess",
+      "destination": "https://hitster-nine.vercel.app/musical-guess"
+    },
+    {
+      "source": "/musical-guess/:path*",
+      "destination": "https://hitster-nine.vercel.app/musical-guess/:path*"
     }
   ]
 }
