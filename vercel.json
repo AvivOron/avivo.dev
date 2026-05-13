@@ -102,6 +102,10 @@
       "destination": "https://victory-gt.vercel.app/victory-gt/:path*"
     },
     {
+      "source": "/musical-guess/api/:path*",
+      "destination": "https://hitster-nine.vercel.app/musical-guess/api/:path*"
+    },
+    {
       "source": "/musical-guess",
       "destination": "https://hitster-nine.vercel.app/musical-guess"
     },
