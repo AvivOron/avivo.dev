@@ -20,6 +20,19 @@ const projects = [
     ],
   },
   {
+    name: "Musical Guessing Game",
+    description:
+      "Multiplayer music guessing game. Listen to a song clip and guess the release year — closest guess wins the round.",
+    tags: ["TypeScript", "Multiplayer", "Game", "Music"],
+    appHref: "/musical-guess",
+    codeHref: "https://github.com/AvivOron/musical-guess",
+    status: "active",
+    screenshots: [
+      "/screenshots/musical-guess-1.jpg",
+      "/screenshots/musical-guess-2.jpg",
+    ],
+  },
+  {
     name: "Wayfarer AI",
     description:
       "AI-powered trip planner. Add your must-see spots, set your preferences and accommodation type, then let Gemini build an optimized day-by-day itinerary — clustered by location, respecting opening hours, and aware of whether you're at a hotel or a friend's couch.",
