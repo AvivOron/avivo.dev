@@ -15,6 +15,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8,
     },
     {
+      url: "https://www.avivo.dev/gridfinity-batteries",
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
+    {
       url: "https://www.avivo.dev/guess-who",
       lastModified: new Date(),
       changeFrequency: "monthly",
