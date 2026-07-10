@@ -122,6 +122,16 @@ const projects = [
     status: "alpha",
     screenshots: [],
   },
+  {
+    name: "Gridfinity Batteries",
+    description:
+      "Configure a Gridfinity-compatible bin sized to hold AA, AAA, or coin-cell batteries, preview it in 3D, and export it straight to STL for printing.",
+    tags: ["TypeScript", "React", "Three.js", "WASM"],
+    appHref: "/gridfinity-batteries",
+    codeHref: "https://github.com/AvivOron/gridfinity-batteries",
+    status: "alpha",
+    screenshots: ["/screenshots/gridfinity-batteries-1.png"],
+  },
 ];
 
 export default function Projects() {

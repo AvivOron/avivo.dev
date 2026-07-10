@@ -112,6 +112,14 @@
     {
       "source": "/musical-guess/:path*",
       "destination": "https://hitster-nine.vercel.app/musical-guess/:path*"
+    },
+    {
+      "source": "/gridfinity-batteries",
+      "destination": "https://gridfinity-batteries.vercel.app/gridfinity-batteries"
+    },
+    {
+      "source": "/gridfinity-batteries/:path*",
+      "destination": "https://gridfinity-batteries.vercel.app/gridfinity-batteries/:path*"
     }
   ]
 }
