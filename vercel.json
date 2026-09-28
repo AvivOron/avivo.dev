@@ -120,6 +120,14 @@
     {
       "source": "/gridfinity-batteries/:path*",
       "destination": "https://gridfinity-batteries.vercel.app/gridfinity-batteries/:path*"
+    },
+    {
+      "source": "/shatap",
+      "destination": "https://shatap-chi.vercel.app/shatap"
+    },
+    {
+      "source": "/shatap/:path*",
+      "destination": "https://shatap-chi.vercel.app/shatap/:path*"
     }
   ]
 }
